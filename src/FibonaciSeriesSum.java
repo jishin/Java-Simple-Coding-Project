@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class FibonaciSeriesSum {
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Enter the no. of terms till which the series must extend");
+        int n = scn.nextInt();
+        Fibonaci(n);
+    }
+    public static void Fibonaci(int n) {
+        int i = 3,x = 1,y = 1,sum = 1;
+        if (n == 0) {
+            System.exit(1);
+        }
+        if (n == 1) {
+            System.out.println(" 0 ");
+            System.out.println("The sum of first n fibonaci series = 0");
+            System.exit(1);
+        } else if (n == 2) {
+            System.out.println(" 0, 1");
+            System.exit(1);
+        }
+        System.out.println("0");
+        System.out.println("1");
+        while (i <= n) {
+
+            int z = x + y;
+            sum = sum+ z;
+            System.out.println(z);
+            x = y;
+            y = z;
+            i++;
+
+        }
+        System.out.println("The sum of first n fibonaci series = " + sum);
+    }
+}
